@@ -10,6 +10,10 @@ DROP DATABASE Covid_DB
 CREATE DATABASE Covid_DB
 
 
+------------------------------------------------------------------------------------
+-------- ****************** Creating Schemas ************************----------------
+------------------------------------------------------------------------------------
+
 ---- Creating schema temp
 
 CREATE SCHEMA [temp]
@@ -19,6 +23,11 @@ go
 
 CREATE SCHEMA [Canada]
 go
+
+
+------------------------------------------------------------------------------------
+------------- ****************** Creating Tables ************************----------------
+------------------------------------------------------------------------------------
 
 -------- Creating temp table CovidData
 
@@ -58,12 +67,10 @@ CREATE TABLE [temp].[CovidData] (
     [hospital_beds_per_thousand] varchar(50)
 )
 
-------------------------------------------------------------------------------------
--------- ****************** Creating Tables ************************----------------
-------------------------------------------------------------------------------------
 
-
--- ************************************** [Canada].[Date]
+----------------------------------------
+-- ************************************** [Canada].[Date] **************************************----
+----------------------------------------
 
 
 CREATE TABLE [Canada].[date]
@@ -81,7 +88,9 @@ CREATE TABLE [Canada].[date]
 );
 GO
 
----******** INSERT QUERY
+------------------------------
+---- INSERT QUERY 
+------------------------------
 
 --SELECT [date],
 --		YEAR([date]) as year,
@@ -93,7 +102,10 @@ GO
 --  FROM [Covid_DB].[temp].[coviddata]
 --WHERE date IS NOT NULL and location = 'canada'
 
--- ************************************** [Canada].[Country]
+---------------------------------------------
+-- ************************************** [Canada].[Country] **************************************---
+--------------------------------------------
+
 CREATE TABLE [Canada].[Country]
 (
  [countryID]                    int IDENTITY (1, 1) NOT NULL ,
@@ -117,7 +129,9 @@ CREATE TABLE [Canada].[Country]
  CONSTRAINT [PK_CountryID] PRIMARY KEY CLUSTERED ([countryID] ASC)
 );
 GO
------*********INSERT QUERY
+------------------------------
+---- INSERT QUERY 
+------------------------------
 
 --SELECT [iso_code]
 --		,date
@@ -137,8 +151,9 @@ GO
 --  FROM [Covid_DB].[temp].[coviddata]
 --WHERE location = 'Canada'
 
-
--- ************************************** [Canada].[Cases]
+------------------------------------
+-- ********************************** [Canada].[Cases] **************************************
+------------------------------------
 
 CREATE TABLE [Canada].[Cases]
 (
@@ -155,7 +170,10 @@ CREATE TABLE [Canada].[Cases]
  CONSTRAINT [casesID] PRIMARY KEY CLUSTERED ([casesID] ASC)
 );
 GO
-------------******* INSERT QUERY
+------------------------------
+---- INSERT QUERY 
+------------------------------
+
 --SELECT [location]
 --      ,[date]
 --      ,[total_cases]
@@ -166,7 +184,10 @@ GO
 --  FROM [Covid_DB].[temp].[coviddata]
 --where location = 'Canada'
 
+
+-----------------------------------------
 -- ************************************** [Canada].[Deaths]
+-----------------------------------------
 
 CREATE TABLE [Canada].[Deaths]
 (
@@ -182,8 +203,10 @@ CREATE TABLE [Canada].[Deaths]
 
  CONSTRAINT [deathsID] PRIMARY KEY CLUSTERED ([deathsID] ASC));
 GO
-
+------------------------------
 ---- INSERT QUERY 
+------------------------------
+
 -- SELECT location as country,
 --		date,
 --		new_deaths,
@@ -194,7 +217,9 @@ GO
 -- FROM temp.CovidData
 --WHERE location = 'Canada'
 
--- ************************************** [Canada].[Tests]
+------------------------------------------
+-- ********************************** [Canada].[Tests]
+----------------------------------------
 
 CREATE TABLE [Canada].[Tests]
 (
@@ -213,8 +238,10 @@ CREATE TABLE [Canada].[Tests]
  CONSTRAINT [testID] PRIMARY KEY CLUSTERED ([testID] ASC)
  );
 GO
-
+------------------------------
 ---- INSERT QUERY 
+------------------------------
+
 --SELECT location as country,
 --		date,
 --		total_tests,
