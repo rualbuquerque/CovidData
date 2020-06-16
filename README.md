@@ -29,5 +29,10 @@ You will find here the following files:
 - 03_ETL_CanadaTable
 
 
+![](Screenshot_SSIS_01.JPG)
+
+![](Screenshot_SSIS_02.JPG)
+
+
 Feel free to reach out if you have a suggestion.
 
