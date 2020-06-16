@@ -22,10 +22,10 @@ I decided to create a schema with the name of the country, so it is very organiz
 You will find here the following files: 
 
 ≫ ‘Setup_CovidData.sql’ with all the queries;
-≫ 03 SSIS packages: \\
-	- 01_TempSchemaLoad \\
-	- 02_ETL Dbo_CovidData \\
-	- 03_ETL_CanadaTable
+≫ 03 SSIS packages:
+- 01_TempSchemaLoad
+- 02_ETL Dbo_CovidData
+- 03_ETL_CanadaTable
 
 
 Feel free to reach out if you have a suggestion.
