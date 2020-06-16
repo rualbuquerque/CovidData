@@ -25,11 +25,30 @@ CREATE SCHEMA [Canada]
 go
 
 
-------------------------------------------------------------------------------------
-------------- ****************** Creating Tables ************************----------------
-------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+------------- **************************** Creating Tables ********************************************----------------
+-----------------------------------------------------------------------------------------------------------------------
+/*
+The tables are:
+temp.coviddata - .csv imported as it is to a SQL table
+dbo.coviddata - table with the correct datatypes
 
--------- Creating temp table CovidData
+Then I divided the table by subject with the possibility of organizating it by countries (being, on this case, the schemas)
+[Canada].[Date]
+[Canada].[Country]
+[Canada].[Cases]
+[Canada].[Deaths]
+[Canada].[Tests]
+
+The reason is to be able to write simpler queries to build faster and clear reports. 
+If you want, you can create a fact table joining on the date column.
+
+*/
+
+
+--------------------------------------------------------------------------
+---************************* [temp].[CovidData] ***************************
+--------------------------------------------------------------------------
 
 CREATE TABLE [temp].[CovidData] (
     [iso_code] varchar(50),
@@ -68,9 +87,50 @@ CREATE TABLE [temp].[CovidData] (
 )
 
 
-----------------------------------------
--- ************************************** [Canada].[Date] **************************************----
-----------------------------------------
+--------------------------------------------------------------------------
+---************************* [dbo].[CovidData] ***************************
+--------------------------------------------------------------------------
+
+CREATE TABLE [dbo].[CovidData] (
+
+[iso_code]                 nvarchar(8) NULL ,
+[continent]                nvarchar(13) NULL ,
+[location]                 nvarchar(32) NOT NULL ,
+[date]     			datetime NOT NULL ,
+[new_cases]			int NOT NULL ,
+[new_cases_per_million]	float NULL ,
+[total_cases]			int NOT NULL ,
+[total_cases_per_million]	float NULL ,
+[new_deaths]               int NOT NULL,
+[new_deaths_per_million]   float NULL ,
+[total_deaths]             int NOT NULL,
+[total_deaths_per_million] float NULL ,
+[cvd_death_rate]           float NULL,
+[stringency_index]		float NULL,
+[total_tests]                     int NULL ,
+[new_tests]                       int NULL ,
+[total_tests_per_thousand]        float NULL ,
+[new_tests_per_thousand]          float NULL ,
+[new_tests_smoothed]              float NULL ,
+[new_tests_smoothed_per_thousand] float NULL ,
+[tests_units]                     nvarchar(15) NULL,
+[gdp_per_capita]             float NULL ,
+[extreme_poverty]            float NULL ,
+[hospital_beds_per_thousand] float NULL ,
+[diabetes_prevalence]        float NULL ,
+[female_smokers]             float NULL ,
+[male_smokers]               float NULL ,
+[population]                 bigint NULL ,
+[population_density]         float NULL ,
+[median_age]                 float NULL ,
+[aged_65_older]              float NULL ,
+[aged_70_olderer_thousand]   float NULL ,
+)
+
+
+--------------------------------------------------------------------------
+---************************* [Canada].[Date] *************************
+--------------------------------------------------------------------------
 
 
 CREATE TABLE [Canada].[date]
@@ -102,9 +162,10 @@ GO
 --  FROM [Covid_DB].[temp].[coviddata]
 --WHERE date IS NOT NULL and location = 'canada'
 
----------------------------------------------
--- ************************************** [Canada].[Country] **************************************---
---------------------------------------------
+
+--------------------------------------------------------------------------
+---************************* [Canada].[Country] *************************
+--------------------------------------------------------------------------
 
 CREATE TABLE [Canada].[Country]
 (
@@ -151,9 +212,9 @@ GO
 --  FROM [Covid_DB].[temp].[coviddata]
 --WHERE location = 'Canada'
 
-------------------------------------
--- ********************************** [Canada].[Cases] **************************************
-------------------------------------
+--------------------------------------------------------------------------
+---************************* [Canada].[Cases] ***************************
+--------------------------------------------------------------------------
 
 CREATE TABLE [Canada].[Cases]
 (
@@ -185,9 +246,9 @@ GO
 --where location = 'Canada'
 
 
------------------------------------------
--- ************************************** [Canada].[Deaths]
------------------------------------------
+--------------------------------------------------------------------------
+---************************* [Canada].[Deaths] ***************************
+--------------------------------------------------------------------------
 
 CREATE TABLE [Canada].[Deaths]
 (
@@ -217,9 +278,10 @@ GO
 -- FROM temp.CovidData
 --WHERE location = 'Canada'
 
-------------------------------------------
--- ********************************** [Canada].[Tests]
-----------------------------------------
+--------------------------------------------------------------------------
+---************************* [Canada].[Tests] ***************************
+--------------------------------------------------------------------------
+
 
 CREATE TABLE [Canada].[Tests]
 (
