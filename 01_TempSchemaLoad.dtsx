@@ -1,0 +1,2263 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/7/2020 3:42:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-E6SKMJR0"
+  DTS:CreatorName="LAPTOP-E6SKMJR0\Rúbia Albuquerque"
+  DTS:DTSID="{B8FE1E99-A6D2-45DB-9897-441A8DB15B95}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.68"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="01_TempSchemaLoad"
+  DTS:PackageType="5"
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{8B4F0635-06AA-4DC6-9A76-A9D24E86E1BC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CovidData_CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D33A2EB2-D55C-4097-8E61-9E0D6F282038}"
+      DTS:ObjectName="CovidData_CSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="4105"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Estudos\Github\Covid\Data\owid-covid-data_06-07.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="iso_code"
+              DTS:DTSID="{B27836CA-FBE4-46E8-B0A7-5F0099B781D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="continent"
+              DTS:DTSID="{8ECD2787-9EF8-4A85-B7A7-DADB6513801D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="location"
+              DTS:DTSID="{ABF6B55F-2ED2-42E9-8941-E67803030318}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="date"
+              DTS:DTSID="{D9DF53C7-7210-408B-8C0F-26E6E67D96F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="total_cases"
+              DTS:DTSID="{A33E59D9-5C3E-4675-9FEA-8D3AF1D45961}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="new_cases"
+              DTS:DTSID="{1F5CF177-6783-482E-8F22-78E593FB9436}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="total_deaths"
+              DTS:DTSID="{DEBEE2C0-F568-45C7-BFAE-C2AB0F0257F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="new_deaths"
+              DTS:DTSID="{B9D8D13B-FED8-44B5-B61E-27ED70A10180}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="total_cases_per_million"
+              DTS:DTSID="{4A416031-8134-401E-80D3-491AA6C5002A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="new_cases_per_million"
+              DTS:DTSID="{5FDDADF1-123F-416E-A980-D808E6CE2C3B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="total_deaths_per_million"
+              DTS:DTSID="{38F72CEF-23A9-4167-A2F6-858C95A295AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="new_deaths_per_million"
+              DTS:DTSID="{78C6A0D1-90CF-492A-86B4-900F37233784}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="total_tests"
+              DTS:DTSID="{27BD68E6-22B8-4FD6-9B56-26765056B873}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="new_tests"
+              DTS:DTSID="{79C3A1BF-7B39-4D22-AABE-711A45EDC126}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="total_tests_per_thousand"
+              DTS:DTSID="{23897899-30C6-4BB7-83F4-507B0D3F7C2F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="new_tests_per_thousand"
+              DTS:DTSID="{2AFE156A-E09B-46EF-B7C1-85EDDE287182}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="new_tests_smoothed"
+              DTS:DTSID="{D5ACA097-F0F6-44A9-95AC-E9F129EE9C11}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="new_tests_smoothed_per_thousand"
+              DTS:DTSID="{947A44CB-3769-414C-BC6D-2ACA46C048E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tests_units"
+              DTS:DTSID="{627EACF1-8CFF-4226-8E8B-44B1F0C5679B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="stringency_index"
+              DTS:DTSID="{08A5C997-4F5C-4429-B431-99CF7ECFAB6E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="population"
+              DTS:DTSID="{5D27A080-96CE-4E00-ABB7-C51223FF10CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="population_density"
+              DTS:DTSID="{378FAE99-753D-40FD-A0F2-D14F3654D36E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="median_age"
+              DTS:DTSID="{58E36759-0AF0-414F-8200-4CD347060A9F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="aged_65_older"
+              DTS:DTSID="{C74B811D-2F90-4E34-9C7B-894EFE86980C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="aged_70_older"
+              DTS:DTSID="{B2264693-2114-40E7-B2A1-04D54048C6CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="gdp_per_capita"
+              DTS:DTSID="{8DFF79E2-5B4D-4AEE-BBF1-F1F8E61710DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="extreme_poverty"
+              DTS:DTSID="{FCBB3604-EE6D-41DE-88D0-A8EF87C34864}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cvd_death_rate"
+              DTS:DTSID="{81D79808-5CE7-4B4F-A280-2BD4B5AF9EF6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="diabetes_prevalence"
+              DTS:DTSID="{B20ECE43-5CCB-411A-B319-A3E98F89C2EA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="female_smokers"
+              DTS:DTSID="{7E6F1014-305D-49E8-AB3E-C266ECEED11F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="male_smokers"
+              DTS:DTSID="{E5D24B3A-347A-44A7-BFB5-91ACB6713D41}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="handwashing_facilities"
+              DTS:DTSID="{1849584F-7F4E-4014-AE4B-FF4BCC272C7B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="hospital_beds_per_thousand"
+              DTS:DTSID="{346C97C5-1BE3-4B8C-88CB-90C4A58BE6DA}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DataProfilesOptions]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{0776D756-72E9-47D5-B391-3E3786141DB8}"
+      DTS:ObjectName="DataProfilesOptions">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="D:\Estudos\Github\Covid\SSIS\DataProfilesOptions" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost]"
+      DTS:CreationName="MSOLAP100"
+      DTS:DTSID="{E85FFC8E-D569-4909-9635-EE8DE16F2CA2}"
+      DTS:ObjectName="localhost">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;PROVIDER=MSOLAP;Impersonation Level=Impersonate;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Covid_DB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B6ED8BFC-B03F-467A-AFC5-C1DDA092A17E}"
+      DTS:ObjectName="LocalHost.Covid_DB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Covid_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Covid_DB 1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{090FE605-873E-44AA-A9DF-08046E47A6B1}"
+      DTS:ObjectName="LocalHost.Covid_DB 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Covid_DB;Integrated Security=True;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Profiling Task"
+      DTS:CreationName="Microsoft.DataProfilingTask"
+      DTS:Description="Data Profiling Task"
+      DTS:DTSID="{8E8BF364-9B8A-45E2-B465-0E71990D373B}"
+      DTS:ExecutableType="Microsoft.DataProfilingTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Profiling Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <DataProfilingTaskData
+          Destination="DataProfilesOptions"
+          OverwriteDestination="True">
+          <ProfileInput><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources />
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{090FE605-873E-44AA-A9DF-08046E47A6B1}</DataSourceID>
+        <Table Schema="temp" Table="coviddata" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{090FE605-873E-44AA-A9DF-08046E47A6B1}</DataSourceID>
+        <Table Schema="temp" Table="coviddata" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{090FE605-873E-44AA-A9DF-08046E47A6B1}</DataSourceID>
+        <Table Schema="temp" Table="coviddata" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq1">
+        <DataSourceID>{090FE605-873E-44AA-A9DF-08046E47A6B1}</DataSourceID>
+        <Table Schema="temp" Table="coviddata" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnPatternProfileRequest ID="PatternReq">
+        <DataSourceID>{090FE605-873E-44AA-A9DF-08046E47A6B1}</DataSourceID>
+        <Table Schema="temp" Table="coviddata" />
+        <Column IsWildCard="true" />
+        <MaxNumberOfPatterns>10</MaxNumberOfPatterns>
+        <PercentageDataCoverageDesired>95</PercentageDataCoverageDesired>
+        <CaseSensitive>false</CaseSensitive>
+        <Delimiters> \t\r\n</Delimiters>
+        <Symbols>,.;:-"'`~=&amp;/\\@!?()&lt;&gt;[]{}|#*^%</Symbols>
+        <TagTableName />
+      </ColumnPatternProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{090FE605-873E-44AA-A9DF-08046E47A6B1}</DataSourceID>
+        <Table Schema="temp" Table="coviddata" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{090FE605-873E-44AA-A9DF-08046E47A6B1}</DataSourceID>
+        <Table Schema="temp" Table="coviddata" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles />
+  </DataProfileOutput>
+</DataProfile>]]></ProfileInput>
+        </DataProfilingTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extract_CSV File"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D2FC336D-3C03-4AAF-9CFA-EC158560B52E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract_CSV File"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extract_CSV File\Extract CSV_Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="4105"
+              name="Extract CSV_Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract_CSV File\Extract CSV_Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CovidData_CSV]"
+                  connectionManagerRefId="Package.ConnectionManagers[CovidData_CSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[iso_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[iso_code]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[iso_code]"
+                      name="iso_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[continent]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[continent]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[continent]"
+                      name="continent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[location]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[location]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[location]"
+                      name="location"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[date]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[date]"
+                      name="date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_cases]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[total_cases]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_cases]"
+                      name="total_cases"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_cases]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_cases]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_cases]"
+                      name="new_cases"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_deaths]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[total_deaths]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_deaths]"
+                      name="total_deaths"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_deaths]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_deaths]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_deaths]"
+                      name="new_deaths"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_cases_per_million]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[total_cases_per_million]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_cases_per_million]"
+                      name="total_cases_per_million"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_cases_per_million]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_cases_per_million]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_cases_per_million]"
+                      name="new_cases_per_million"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_deaths_per_million]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[total_deaths_per_million]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_deaths_per_million]"
+                      name="total_deaths_per_million"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_deaths_per_million]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_deaths_per_million]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_deaths_per_million]"
+                      name="new_deaths_per_million"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_tests]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[total_tests]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_tests]"
+                      name="total_tests"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_tests]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_tests]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_tests]"
+                      name="new_tests"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_tests_per_thousand]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[total_tests_per_thousand]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_tests_per_thousand]"
+                      name="total_tests_per_thousand"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_tests_per_thousand]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_tests_per_thousand]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_tests_per_thousand]"
+                      name="new_tests_per_thousand"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_tests_smoothed]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_tests_smoothed]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_tests_smoothed]"
+                      name="new_tests_smoothed"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_tests_smoothed_per_thousand]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_tests_smoothed_per_thousand]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_tests_smoothed_per_thousand]"
+                      name="new_tests_smoothed_per_thousand"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[tests_units]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[tests_units]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[tests_units]"
+                      name="tests_units"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[stringency_index]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[stringency_index]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[stringency_index]"
+                      name="stringency_index"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[population]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[population]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[population]"
+                      name="population"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[population_density]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[population_density]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[population_density]"
+                      name="population_density"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[median_age]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[median_age]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[median_age]"
+                      name="median_age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[aged_65_older]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[aged_65_older]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[aged_65_older]"
+                      name="aged_65_older"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[aged_70_older]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[aged_70_older]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[aged_70_older]"
+                      name="aged_70_older"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[gdp_per_capita]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[gdp_per_capita]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[gdp_per_capita]"
+                      name="gdp_per_capita"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[extreme_poverty]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[extreme_poverty]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[extreme_poverty]"
+                      name="extreme_poverty"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[cvd_death_rate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[cvd_death_rate]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[cvd_death_rate]"
+                      name="cvd_death_rate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[diabetes_prevalence]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[diabetes_prevalence]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[diabetes_prevalence]"
+                      name="diabetes_prevalence"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[female_smokers]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[female_smokers]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[female_smokers]"
+                      name="female_smokers"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[male_smokers]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[male_smokers]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[male_smokers]"
+                      name="male_smokers"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[hospital_beds_per_thousand]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[hospital_beds_per_thousand]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[hospital_beds_per_thousand]"
+                      name="hospital_beds_per_thousand"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[handwashing_facilities]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[handwashing_facilities]"
+                      length="50"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[handwashing_facilities]"
+                      name="handwashing_facilities"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[iso_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="iso_code" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[continent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="continent" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[location]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="location" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[total_cases]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total_cases" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_cases]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_cases" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[total_deaths]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total_deaths" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_deaths]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_deaths" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[total_cases_per_million]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total_cases_per_million" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_cases_per_million]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_cases_per_million" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[total_deaths_per_million]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total_deaths_per_million" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_deaths_per_million]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_deaths_per_million" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[total_tests]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total_tests" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_tests]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_tests" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[total_tests_per_thousand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total_tests_per_thousand" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_tests_per_thousand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_tests_per_thousand" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_tests_smoothed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_tests_smoothed" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[new_tests_smoothed_per_thousand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_tests_smoothed_per_thousand" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[tests_units]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tests_units" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[stringency_index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="stringency_index" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[population]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="population" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[population_density]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="population_density" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[median_age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="median_age" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[aged_65_older]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="aged_65_older" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[aged_70_older]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="aged_70_older" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[gdp_per_capita]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="gdp_per_capita" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[extreme_poverty]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="extreme_poverty" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[cvd_death_rate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="cvd_death_rate" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[diabetes_prevalence]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="diabetes_prevalence" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[female_smokers]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="female_smokers" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[male_smokers]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="male_smokers" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[hospital_beds_per_thousand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="hospital_beds_per_thousand" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].ExternalColumns[handwashing_facilities]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="handwashing_facilities" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract_CSV File\Temp_CovidData"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Temp_CovidData"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Temp].[coviddata]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract_CSV File\Temp_CovidData.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Covid_DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Covid_DB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[iso_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="iso_code"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[iso_code]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[iso_code]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[continent]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="continent"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[continent]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[continent]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[location]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="location"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[location]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[location]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="date"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[date]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[total_cases]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="total_cases"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[total_cases]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_cases]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[new_cases]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="new_cases"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_cases]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_cases]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[total_deaths]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="total_deaths"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[total_deaths]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_deaths]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[new_deaths]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="new_deaths"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_deaths]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_deaths]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[total_cases_per_million]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="total_cases_per_million"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[total_cases_per_million]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_cases_per_million]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[new_cases_per_million]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="new_cases_per_million"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_cases_per_million]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_cases_per_million]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[total_deaths_per_million]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="total_deaths_per_million"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[total_deaths_per_million]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_deaths_per_million]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[new_deaths_per_million]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="new_deaths_per_million"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_deaths_per_million]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_deaths_per_million]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[total_tests]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="total_tests"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[total_tests]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_tests]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[new_tests]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="new_tests"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_tests]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_tests]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[total_tests_per_thousand]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="total_tests_per_thousand"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[total_tests_per_thousand]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[total_tests_per_thousand]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[new_tests_per_thousand]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="new_tests_per_thousand"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_tests_per_thousand]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_tests_per_thousand]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[new_tests_smoothed]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="new_tests_smoothed"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_tests_smoothed]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_tests_smoothed]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[new_tests_smoothed_per_thousand]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="new_tests_smoothed_per_thousand"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_tests_smoothed_per_thousand]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[new_tests_smoothed_per_thousand]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[tests_units]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="tests_units"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[tests_units]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[tests_units]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[stringency_index]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="stringency_index"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[stringency_index]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[stringency_index]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[population]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="population"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[population]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[population]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[population_density]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="population_density"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[population_density]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[population_density]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[median_age]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="median_age"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[median_age]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[median_age]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[aged_65_older]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="aged_65_older"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[aged_65_older]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[aged_65_older]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[aged_70_older]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="aged_70_older"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[aged_70_older]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[aged_70_older]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[gdp_per_capita]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gdp_per_capita"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[gdp_per_capita]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[gdp_per_capita]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[extreme_poverty]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="extreme_poverty"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[extreme_poverty]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[extreme_poverty]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[cvd_death_rate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cvd_death_rate"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[cvd_death_rate]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[cvd_death_rate]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[diabetes_prevalence]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="diabetes_prevalence"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[diabetes_prevalence]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[diabetes_prevalence]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[female_smokers]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="female_smokers"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[female_smokers]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[female_smokers]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[male_smokers]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="male_smokers"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[male_smokers]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[male_smokers]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[hospital_beds_per_thousand]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="hospital_beds_per_thousand"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[hospital_beds_per_thousand]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[hospital_beds_per_thousand]" />
+                    <inputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].Columns[handwashing_facilities]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="handwashing_facilities"
+                      externalMetadataColumnId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[handwashing_facilities]"
+                      lineageId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output].Columns[handwashing_facilities]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[iso_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="iso_code" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[continent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="continent" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[location]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="location" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[total_cases]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total_cases" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_cases]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_cases" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[total_deaths]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total_deaths" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_deaths]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_deaths" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[total_cases_per_million]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total_cases_per_million" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_cases_per_million]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_cases_per_million" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[total_deaths_per_million]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total_deaths_per_million" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_deaths_per_million]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_deaths_per_million" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[total_tests]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total_tests" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_tests]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_tests" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[total_tests_per_thousand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total_tests_per_thousand" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_tests_per_thousand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_tests_per_thousand" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_tests_smoothed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_tests_smoothed" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[new_tests_smoothed_per_thousand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="new_tests_smoothed_per_thousand" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[tests_units]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tests_units" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[stringency_index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="stringency_index" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[population]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="population" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[population_density]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="population_density" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[median_age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="median_age" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[aged_65_older]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="aged_65_older" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[aged_70_older]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="aged_70_older" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[gdp_per_capita]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="gdp_per_capita" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[extreme_poverty]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="extreme_poverty" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[cvd_death_rate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="cvd_death_rate" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[diabetes_prevalence]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="diabetes_prevalence" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[female_smokers]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="female_smokers" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[male_smokers]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="male_smokers" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[handwashing_facilities]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="handwashing_facilities" />
+                    <externalMetadataColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input].ExternalColumns[hospital_beds_per_thousand]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="hospital_beds_per_thousand" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract_CSV File\Temp_CovidData.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract_CSV File\Temp_CovidData.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract_CSV File\Temp_CovidData.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract_CSV File\Temp_CovidData.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extract_CSV File.Paths[Flat File Source Output]"
+              endId="Package\Extract_CSV File\Temp_CovidData.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Extract_CSV File\Extract CSV_Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{53810343-6C1C-4105-AF54-A9C9696026A1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B6ED8BFC-B03F-467A-AFC5-C1DDA092A17E}"
+          SQLTask:SqlStatementSource="Truncate Table [temp].[CovidData]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{BD862C8E-0F73-4B1F-9500-45DEF5EA4A4D}"
+      DTS:From="Package\Truncate Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Extract_CSV File" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{21FEDB77-29CA-49E5-BD04-26C4AF6F81E1}"
+      DTS:From="Package\Extract_CSV File"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Data Profiling Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Data Profiling Task"
+          TopLeft="390.071433077053,39.8529399753029" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Extract_CSV File"
+          TopLeft="199.42857482482,39.1529417255758" />
+        <NodeLayout
+          Size="148.8,41.6"
+          Id="Package\Truncate Table"
+          TopLeft="13.1428573666787,37.3176475821894" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="161.942857366679,59.0352946538826">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="37.4857174581412,0"
+              Start="0,0"
+              End="29.9857174581412,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29.9857174581412,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="354.62857482482,60.3029408504394">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="35.4428582522331,0"
+              Start="0,0"
+              End="27.9428582522331,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="27.9428582522331,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="With this task you can have a better understanding&#xD;&#xA;of your data before finishing the design of your&#xD;&#xA;database. This way you'll have a better ETL process"
+          ParentId="Package"
+          Size="275.2,60"
+          Id="e8f38046-a23d-4d5c-93e4-c17b74d1dcd3"
+          TopLeft="360.000006130764,96.6588248850153">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Trebuchet MS"
+              Size="10.199999809265137"
+              Color="#FF000000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="Esta task ajuda a entender melhor seus dados&#xD;&#xA;antes de terminar o design de seu banco de dados.&#xD;&#xA;Desta maneira o processo ETL vai ser mais organizado."
+          ParentId="Package"
+          Size="264.8,86.4"
+          Id="dca6ecd5-8281-4562-9a17-4937759c0013"
+          TopLeft="367.428577685843,157.223531616765">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Trebuchet MS"
+              Size="10.800000190734863"
+              Color="#FF000000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[localhost]">
+    <ProjectReferenceName></ProjectReferenceName>
+  </ConnectionManager>
+  <TaskHost
+    design-time-name="Package\Extract_CSV File">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\Extract_CSV File\Temp_CovidData"
+          TopLeft="404.000006880079,188.423532054334" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Extract_CSV File\Extract CSV_Source"
+          TopLeft="38.2857149377161,67.2941185908334" />
+        <EdgeLayout
+          Id="Package\Extract_CSV File.Paths[Flat File Source Output]"
+          TopLeft="123.885714937716,108.894118590833">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="359.314291942363,79.5294134635002"
+              Start="0,0"
+              End="359.314291942363,72.0294134635002">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.7647067317501" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.7647067317501"
+                    Point2="0,39.7647067317501"
+                    Point3="4,39.7647067317501" />
+                  <mssgle:LineSegment
+                    End="355.314291942363,39.7647067317501" />
+                  <mssgle:CubicBezierSegment
+                    Point1="355.314291942363,39.7647067317501"
+                    Point2="359.314291942363,39.7647067317501"
+                    Point3="359.314291942363,43.7647067317501" />
+                  <mssgle:LineSegment
+                    End="359.314291942363,72.0294134635002" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Extract it using a Flat File Source Task"
+          ParentId="Package\Extract_CSV File"
+          FontInfo="{assembly:Null}"
+          Size="224,40"
+          Id="714a6646-d5bd-457e-b1be-57b53eb54cec"
+          TopLeft="24.0000004087176,12.2352942892425" />
+        <AnnotationLayout
+          Text="Send it to a temp table"
+          ParentId="Package\Extract_CSV File"
+          FontInfo="{assembly:Null}"
+          Size="150.4,40"
+          Id="ffd90131-7a81-49ec-9f53-8a2cd0e283ca"
+          TopLeft="394.85714958152,96.6588248850153" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract_CSV File\Temp_CovidData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
